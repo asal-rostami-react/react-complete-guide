@@ -42,23 +42,16 @@ class App extends Component {
 
     // const person = Object.assign({}, this.state.persons[personIndex]);
     // or
-    const person ={
+    const person = {
       ...this.state.persons[personIndex]
     };
 
     person.name = event.target.value;
-    
+
     const persons = [...this.state.persons];
-    persons[personIndex] = peron;
+    persons[personIndex] = person;
 
-
-    this.setState( {
-      persons: [
-        { id:'asda1' ,name: 'Asal', age: 35},
-        { id:'ssff2' ,name: event.target.value, age: 28},
-        { id:'ddf22' ,name: 'Julie', age: 11}
-      ]
-    } )
+    this.setState({persons: persons})
   }
 
   render() {
