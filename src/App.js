@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person';
+import person from './Person/Person';
 
 class App extends Component {
 
@@ -32,7 +33,25 @@ class App extends Component {
 
   }
 
-  nameChangedHandler = (event) => {
+  nameChangedHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex(p => {
+      return p.id === id;
+
+    });
+
+
+    // const person = Object.assign({}, this.state.persons[personIndex]);
+    // or
+    const person ={
+      ...this.state.persons[personIndex]
+    };
+
+    person.name = event.target.value;
+    
+    const persons = [...this.state.persons];
+    persons[personIndex] = peron;
+
+
     this.setState( {
       persons: [
         { id:'asda1' ,name: 'Asal', age: 35},
@@ -61,7 +80,8 @@ class App extends Component {
               click={() => this.deletePersonHandler(index)}
               name={peron.name}
               age={peron.age} 
-              key={peron.id} />
+              key={peron.id}
+              changed={(event) => this.nameChangedHandler(event, person.id)} />
             })
           }
         </div>
