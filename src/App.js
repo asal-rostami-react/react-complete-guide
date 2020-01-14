@@ -2,7 +2,23 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 // import Radium, {StyleRoot} from 'radium';
+import styled from 'styled-components'
 import Person from './Person/Person';
+
+
+const StyledButton = styled.button`
+  background-color: green;
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lightgreen;
+    color: black;
+  }
+`;
 
 
 class App extends Component {
@@ -63,10 +79,12 @@ class App extends Component {
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer',
+      // work with radium
       ':hover': {
         backgroundColor: 'lightgreen',
         color: 'black'
       }
+      // 
     };
 
     let persons = null;
@@ -87,10 +105,12 @@ class App extends Component {
 
       );
       style.backgroundColor = 'red';
+      // work with radium
       style[':hover']= {
         backgroundColor: 'pink',
         color: 'black'
       }
+      // 
 
     }
 
@@ -108,9 +128,12 @@ class App extends Component {
           <div className="App">
               <h1>hello asal joon!!!</h1>
               <p className={classes.join(' ')}>This is really working!</p>
-              <button 
-              style={style}
-              onClick={this.togglePersonHandler}>Toggle Persons</button>
+              <StyledButton onClick={this.togglePersonHandler}>
+                Toggle Persons
+              </StyledButton>
+
+             {/* work with radium */}
+              {/* <button style={style} onClick={this.togglePersonHandler}>Toggle Persons</button> */}
 
               {persons}
      
