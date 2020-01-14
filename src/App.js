@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import Radium, {StyleRoot} from 'radium';
+// import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
 
 
@@ -104,7 +104,7 @@ class App extends Component {
     }
 
     return (
-      <StyleRoot>
+      // <StyleRoot>
           <div className="App">
               <h1>hello asal joon!!!</h1>
               <p className={classes.join(' ')}>This is really working!</p>
@@ -116,11 +116,12 @@ class App extends Component {
      
           </div>
 
-      </StyleRoot>
+      // </StyleRoot>
     
     );
     // return React.createElement('div',{className: 'App'}, React.createElement('h1', null,'Hello asal joon!!! by jsx'))
   }
 }
 
-export default Radium(App);
+// export default Radium(App);
+export default App;
