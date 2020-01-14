@@ -20,12 +20,14 @@ const StyledDiv = styled.div`
 
 const person = (props) => {
 
-    const style = {
-        '@media (min-width: 500px)': {
-            width: '450px'
+    // by radium
 
-        }
-    };
+    // const style = {
+    //     '@media (min-width: 500px)': {
+    //         width: '450px'
+
+    //     }
+    // };
     return (
 
         <StyledDiv> 
