@@ -7,7 +7,7 @@ import Person from './Person/Person';
 
 
 const StyledButton = styled.button`
-  background-color: green;
+  background-color: ${props => props.alt ? 'red' : 'green'};
   color: white;
   font: inherit;
   border: 1px solid blue;
@@ -15,7 +15,7 @@ const StyledButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: lightgreen;
+    background-color: ${props => props.alt ? 'pink' : 'lightgreen'};
     color: black;
   }
 `;
@@ -104,12 +104,14 @@ class App extends Component {
         </div>
 
       );
-      style.backgroundColor = 'red';
       // work with radium
-      style[':hover']= {
-        backgroundColor: 'pink',
-        color: 'black'
-      }
+
+      // style.backgroundColor = 'red';
+      // // work with radium
+      // style[':hover']= {
+      //   backgroundColor: 'pink',
+      //   color: 'black'
+      // }
       // 
 
     }
@@ -128,7 +130,7 @@ class App extends Component {
           <div className="App">
               <h1>hello asal joon!!!</h1>
               <p className={classes.join(' ')}>This is really working!</p>
-              <StyledButton onClick={this.togglePersonHandler}>
+              <StyledButton alt={this.state.showPerson} onClick={this.togglePersonHandler}>
                 Toggle Persons
               </StyledButton>
 
