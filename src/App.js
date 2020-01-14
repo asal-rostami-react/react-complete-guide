@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Person from './Person/Person';
-import person from './Person/Person';
+
 
 class App extends Component {
 
@@ -68,12 +68,12 @@ class App extends Component {
       persons = (
         <div>
           {
-            this.state.persons.map((peron, index) => {
+            this.state.persons.map((person, index) => {
               return <Person
               click={() => this.deletePersonHandler(index)}
-              name={peron.name}
-              age={peron.age} 
-              key={peron.id}
+              name={person.name}
+              age={person.age} 
+              key={person.id}
               changed={(event) => this.nameChangedHandler(event, person.id)} />
             })
           }
