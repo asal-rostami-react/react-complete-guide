@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import classes from './App.css';
-import Person from './Person/Person';
+import Person from '../components/Persons/Person/Person';
 
 // import Radium, {StyleRoot} from 'radium';
 // import styled from 'styled-components';
