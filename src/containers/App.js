@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 // import Radium, {StyleRoot} from 'radium';
 // import styled from 'styled-components';
@@ -59,43 +60,22 @@ class App extends Component {
 
   render() {
     let persons = null;
-    let btnClass = '';
+  
 
 
     if( this.state.showPerson ) {
-      persons = (
-        <div>
-          <Persons 
+      persons = <Persons 
           persons={this.state.persons}
           clicked={this.deletePersonHandler}
-          changed={this.nameChangedHandler}/>
-        </div>
-
-      );
-
-      // btnClass.push(classes.Red);
-      btnClass =classes.Red;
-
+          changed={this.nameChangedHandler}/>;
     }
-
-    // let classes = ['red', 'bold'].join(' ');
-    const assignedClasses = [];
-    if(this.state.persons.length <= 2){
-      assignedClasses.push(classes.red);
-    }
-    if(this.state.persons.length <= 1){
-      assignedClasses.push(classes.bold);
-    }
-
     return (
           <div className={classes.App}>
-              <h1>hello asal joon!!!</h1>
-              <p className={assignedClasses.join(' ')}>This is really working!</p>
-              <button className={btnClass} onClick={this.togglePersonHandler}>
-                Toggle Persons
-              </button>
-
-              {persons}
+            <Cockpit 
+              showPersons={this.state.showPerson}
+              persons={this.state.persons}
+              clicked={this.togglePersonHandler}/>
+            {persons}
           </div>
     );
     // return React.createElement('div',{className: 'App'}, React.createElement('h1', null,'Hello asal joon!!! by jsx'))
