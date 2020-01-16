@@ -2,19 +2,19 @@ import React from 'react';
 import classes from './Cockpit.css';
 
 const cockpit = (props) => {
-
      // let classes = ['red', 'bold'].join(' ');
      const assignedClasses = [];
      let btnClass = '';
+
      if(props.showPersons)
      {
         btnClass =classes.Red;
      }
       
-
      if(props.persons.length <= 2){
        assignedClasses.push(classes.red);
      }
+     
      if(props.persons.length <= 1){
        assignedClasses.push(classes.bold);
      }
@@ -25,9 +25,7 @@ const cockpit = (props) => {
             <button className={btnClass} onClick={props.clicked}>
             Toggle Persons
             </button>
-
-        </div>
-       
+        </div>   
     );
 }
 
