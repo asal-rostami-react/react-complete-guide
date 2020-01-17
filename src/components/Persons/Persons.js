@@ -52,6 +52,8 @@ export default persons;
 //     console.log('[Persons.js] componentDidUpdate');
 //     console.log(snapshot);
 //   }
+
+// for cleaning up of priject
   // componetWillUnmount(){
   //   console.log('[Persons.js] componentWillUnmount');
   // }
