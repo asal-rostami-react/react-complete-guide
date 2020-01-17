@@ -16,6 +16,15 @@ const cockpit = (props) => {
     };
   } ,[props.persons]);
 
+  // for cleaning up berore any re-rendering
+  useEffect(() => {
+    console.log('[cockpit.js] 2nd useEffect');
+    return () => {
+      console.log('[Cockpit.js] cleanup work in 2nd useEffect');
+    };
+    // without passing any argument
+  })
+
 
   // by considering an empty array,this useEffect will be rendered just one time at the begining of runing the project
   // useEffect(() => {
