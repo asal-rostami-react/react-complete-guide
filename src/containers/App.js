@@ -32,6 +32,14 @@ class App extends Component {
   componentDidMount(){
     console.log('[App.js] componentDidMount');
   }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('[App.js] shouldComponentUpdate');
+    return true;
+  }
+
+  componentDidUpdate() {
+    console.log('[App.js] componentDidUpdate');
+  }
 
   deletePersonHandler = (personIndex) => {
     // const persons = this.state.persons.slice();
@@ -61,6 +69,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('[App.js] render');
     let persons = null;
   
     if( this.state.showPerson ) {
