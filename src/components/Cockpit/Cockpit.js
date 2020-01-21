@@ -15,7 +15,8 @@ const cockpit = (props) => {
       clearTimeout(timer);
       console.log('[Cockpit.js] cleanup work in useEffect');
     };
-  } ,[props.persons]);
+  }, []);
+  // } ,[props.persons]);
 
   // for cleaning up berore any re-rendering
   useEffect(() => {
