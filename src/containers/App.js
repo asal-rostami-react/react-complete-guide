@@ -18,7 +18,8 @@ class App extends Component {
       otherStates : 'this is a other state',
       showPerson : false,
       showCockpit: true,
-      changeCounter: 0
+      changeCounter: 0,
+      authenticated: false
 
     }
   }
@@ -54,7 +55,11 @@ class App extends Component {
   togglePersonHandler = () => {
     const doesShow = this.state.showPerson;
     this.setState({showPerson: !doesShow});
-  }
+  };
+
+  loginHandler = () => {
+    this.setState({authenticated: true});
+  };
 
   nameChangedHandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
@@ -84,10 +89,13 @@ class App extends Component {
     let persons = null;
   
     if( this.state.showPerson ) {
-      persons = <Persons 
+      persons =  <Persons 
           persons={this.state.persons}
           clicked={this.deletePersonHandler}
-          changed={this.nameChangedHandler}/>;
+          changed={this.nameChangedHandler}
+          isAuthenticated={this.state.authenticated}
+          
+          />;       
     }
     return (
           // <div className={classes.App}>
@@ -102,6 +110,8 @@ class App extends Component {
               showPersons={this.state.showPerson}
               personsLenght={this.state.persons.length}
               clicked={this.togglePersonHandler}
+              login={this.loginHandler}
+
             />) : null}
             {persons}
           </Aux>
