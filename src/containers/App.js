@@ -95,7 +95,7 @@ class App extends Component {
               clicked={this.togglePersonHandler}
             />) : null}
             {persons}
-            </Aux>
+          </Aux>
           // </div>
     );
   }
