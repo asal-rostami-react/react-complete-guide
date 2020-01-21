@@ -17,7 +17,8 @@ class App extends Component {
       ],
       otherStates : 'this is a other state',
       showPerson : false,
-      showCockpit: true
+      showCockpit: true,
+      changeCounter: 0
 
     }
   }
@@ -67,8 +68,16 @@ class App extends Component {
     person.name = event.target.value;
     const persons = [...this.state.persons];
     persons[personIndex] = person;
-    this.setState({persons: persons})
-  }
+
+    this.setState((preState, props) => {
+      return{
+        persons: persons,
+        changeCounter: preState.changeCounter + 1,
+
+      }; 
+    });
+    
+  };
 
   render() {
     console.log('[App.js] render');
