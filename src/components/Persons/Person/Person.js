@@ -22,6 +22,13 @@ const person = (props) => {
     )
 };
 
+Person.propTypes = {
+    clicked: PropTypes.func,
+    name: PropTypes.string,
+    age: PropTypes.number,
+    changed: PropTypes.func
+};
+
 // when you want to use Aux with withClass function
 export default withClass(person, classes.Person);
 
